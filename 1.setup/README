@@ -1,0 +1,97 @@
+Building package
+=====
+
+$ python setup.py bdist_egg
+
+running bdist_egg
+running egg_info
+creating demo.egg-info
+writing demo.egg-info/PKG-INFO
+writing top-level names to demo.egg-info/top_level.txt
+writing dependency_links to demo.egg-info/dependency_links.txt
+writing manifest file 'demo.egg-info/SOURCES.txt'
+reading manifest file 'demo.egg-info/SOURCES.txt'
+writing manifest file 'demo.egg-info/SOURCES.txt'
+
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+warning: install_lib: 'build/lib.linux-x86_64-2.7' does not exist -- no Python modules to install
+
+creating build
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+
+copying demo.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying demo.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying demo.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying demo.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist/demo-0.1-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+
+
+Directory tree
+=====
+
+demo1/
+|-- build
+|   `-- bdist.linux-x86_64
+|-- demo.egg-info
+|   |-- dependency_links.txt
+|   |-- PKG-INFO
+|   |-- SOURCES.txt
+|   `-- top_level.txt
+|-- dist
+|   `-- demo-0.1-py2.7.egg
+|-- README
+`-- setup.py
+
+
+The package information of egg
+=====
+
+$ file dist/demo-0.1-py2.7.egg
+dist/demo-0.1-py2.7.egg: Zip archive data, at least v2.0 to extract
+
+$ cat demo.egg-info/SOURCES.txt
+README
+setup.py
+demo.egg-info/PKG-INFO
+demo.egg-info/SOURCES.txt
+demo.egg-info/dependency_links.txt
+demo.egg-info/top_level.txt
+
+$ cat demo.egg-info/PKG-INFO
+Metadata-Version: 1.0
+Name: demo
+Version: 0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+
+$ unzip -l dist/demo-0.1-py2.7.egg
+Archive:  dist/demo-0.1-py2.7.egg
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        1  2016-08-12 01:58   EGG-INFO/top_level.txt
+      127  2016-08-12 01:58   EGG-INFO/SOURCES.txt
+      176  2016-08-12 01:58   EGG-INFO/PKG-INFO
+        1  2016-08-12 01:58   EGG-INFO/dependency_links.txt
+        1  2016-08-12 01:58   EGG-INFO/zip-safe
+---------                     -------
+      306                     5 files
+
+
+Installation
+=====
+
+$ python setup.py install
+
+
