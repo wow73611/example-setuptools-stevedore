@@ -1,0 +1,161 @@
+Building package
+=====
+
+$ python setup.py bdist_egg
+
+python setup.py bdist_egg
+running bdist_egg
+running egg_info
+writing src/demo.egg-info/PKG-INFO
+writing top-level names to src/demo.egg-info/top_level.txt
+writing dependency_links to src/demo.egg-info/dependency_links.txt
+writing entry points to src/demo.egg-info/entry_points.txt
+reading manifest file 'src/demo.egg-info/SOURCES.txt'
+writing manifest file 'src/demo.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/hello
+copying src/hello/__init__.py -> build/lib.linux-x86_64-2.7/hello
+copying src/hello/test.py -> build/lib.linux-x86_64-2.7/hello
+creating build/lib.linux-x86_64-2.7/demo
+copying src/demo/__init__.py -> build/lib.linux-x86_64-2.7/demo
+copying src/demo/test.py -> build/lib.linux-x86_64-2.7/demo
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/hello
+copying build/lib.linux-x86_64-2.7/hello/__init__.py -> build/bdist.linux-x86_64/egg/hello
+copying build/lib.linux-x86_64-2.7/hello/test.py -> build/bdist.linux-x86_64/egg/hello
+creating build/bdist.linux-x86_64/egg/demo
+copying build/lib.linux-x86_64-2.7/demo/__init__.py -> build/bdist.linux-x86_64/egg/demo
+copying build/lib.linux-x86_64-2.7/demo/test.py -> build/bdist.linux-x86_64/egg/demo
+byte-compiling build/bdist.linux-x86_64/egg/hello/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/hello/test.py to test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/demo/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/demo/test.py to test.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/demo.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/demo.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/demo.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/demo.egg-info/entry_points.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/demo.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist/demo-0.4-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+
+
+Directory tree
+=====
+
+./
+|-- build
+|   |-- bdist.linux-x86_64
+|   `-- lib.linux-x86_64-2.7
+|       |-- demo
+|       |   |-- __init__.py
+|       |   `-- test.py
+|       `-- hello
+|           |-- __init__.py
+|           `-- test.py
+|-- dist
+|   `-- demo-0.4-py2.7.egg
+|-- README
+|-- setup.py
+`-- src
+    |-- demo
+    |   |-- __init__.py
+    |   |-- README.md
+    |   |-- requirements.txt
+    |   `-- test.py
+    |-- demo.egg-info
+    |   |-- dependency_links.txt
+    |   |-- entry_points.txt
+    |   |-- PKG-INFO
+    |   |-- SOURCES.txt
+    |   `-- top_level.txt
+    |-- hello
+    |   |-- __init__.py
+    |   |-- README.md
+    |   |-- requirements.txt
+    |   `-- test.py
+    `-- README.md
+
+
+The package information of egg
+=====
+
+$ file dist/demo-0.4-py2.7.egg
+dist/demo-0.4-py2.7.egg: data
+
+$ unzip -l dist/demo-0.4-py2.7.egg
+Archive:  dist/demo-0.4-py2.7.egg
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      124  2016-08-11 20:01   hello/__init__.py
+      129  2016-08-15 02:37   hello/test.pyc
+        0  2016-08-12 00:34   hello/test.py
+      344  2016-08-15 02:37   hello/__init__.pyc
+       11  2016-08-15 02:37   EGG-INFO/top_level.txt
+      302  2016-08-15 02:37   EGG-INFO/SOURCES.txt
+      214  2016-08-15 02:37   EGG-INFO/entry_points.txt
+      176  2016-08-15 02:37   EGG-INFO/PKG-INFO
+        1  2016-08-15 02:37   EGG-INFO/dependency_links.txt
+        1  2016-08-15 02:37   EGG-INFO/zip-safe
+      125  2016-08-11 20:02   demo/__init__.py
+      128  2016-08-15 02:37   demo/test.pyc
+        0  2016-08-12 00:34   demo/test.py
+      343  2016-08-15 02:37   demo/__init__.pyc
+---------                     -------
+     1898                     14 files
+
+$ cat src/demo.egg-info/SOURCES.txt
+README
+setup.py
+src/demo/README.md
+src/demo/__init__.py
+src/demo/test.py
+src/demo.egg-info/PKG-INFO
+src/demo.egg-info/SOURCES.txt
+src/demo.egg-info/dependency_links.txt
+src/demo.egg-info/entry_points.txt
+src/demo.egg-info/top_level.txt
+src/hello/__init__.py
+src/hello/requirements.txt
+
+$ cat src/demo.egg-info/PKG-INFO
+Metadata-Version: 1.0
+Name: demo
+Version: 0.4
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+
+$ cat src/demo.egg-info/entry_points.txt
+[setuptools.installation]
+eggsecutable = demo:main
+
+[ep_group]
+demo = demo:main
+hello = hello:main
+
+[console_scripts]
+demo = demo:main
+hello = hello:main
+
+[gui_scripts]
+demo_gui = demo:main
+hello_gui = hello:main
+
+Installation
+=====
+
+$ python setup.py install
+
+
